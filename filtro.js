@@ -8,8 +8,10 @@ const productos = [
   {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
 ]
 
-const li = document.getElementsByName("lista-de-productos")
-const $i = document.querySelector('.input');
+//los nombres de la variables no son claras, se cambian para su explicar mejor su uso
+
+const contenedorDiv = document.getElementById("lista-de-productos") // no existe el name "lista de productos" se cambia el texto en el html. La manera correcta de refenrenciar al div seria con getElementById
+const entradaUsuario = document.querySelector('.entrada-filtro'); // se anadio la clase en el input del html
 
 for (let i = 0; i < productos.length; i++) {
   var d = document.createElement("div")
@@ -25,7 +27,7 @@ for (let i = 0; i < productos.length; i++) {
   d.appendChild(ti)
   d.appendChild(imagen)
 
-  li.appendChild(d)
+  contenedorDiv.appendChild(d) // se modifico la variable a usar
 }
 
 displayProductos(productos)
